@@ -112,14 +112,16 @@
             </util:map>
         </property>
         <property name="filterChainDefinitions">
-            <value>
+            <value>                
+                /favicon.ico = anon
                 /remoteService = anon
                 /mall/login = anon
-                /static/mall/** = anon
+                /captcha/** = anon
+                /static/** = anon
                 /login = authc
                 /logout = logout
                 /authenticated = authc
-                /** = user,sysUser
+                /** = user,sysUser                
             </value>
         </property>
     </bean>
