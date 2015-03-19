@@ -1,0 +1,120 @@
+﻿/*这个样式只用于${pagetag}，没有别的用途*/
+.btnp {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    padding: 0 22px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.btnp_primary {
+    background: #44b549;
+    border-color: #44b549;
+    color: #fff;
+    margin:0 0 0 10px;
+}
+.btnp_primary:hover {
+    background: #2f9833;
+    border-color: #2f9833;
+    color: #fff;
+}
+.btnp_default {
+    background: #fff;
+    border-color: #e6e7ec;
+    color: #222;
+    margin:0 0 0 10px;
+}
+.btnp_default:hover {
+    background: #e6e7ec;
+    border-color: #dadbe0;
+    color: #222;
+}
+.btnp.page_prev, .btnp.page_next {
+    font-size: 0;
+    height: 25px;
+    letter-spacing: -5px;
+    line-height: 25px;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    width: auto;
+}
+.btnp.page_go {
+	width:50px;
+    height:25px;
+    line-height:25px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.btnp.page_prev .arrow, .btnp.page_next .arrow {
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+}
+.page_center{
+	text-align:center;
+	display:block;
+}
+.page_prev .arrow {
+    border-color: transparent #919191 transparent transparent;
+    border-style: dashed solid dashed dashed;
+    border-width: 6px 6px 6px 0;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+.page_next .arrow {
+    border-color: transparent transparent transparent #919191;
+    border-style: dashed dashed dashed solid;
+    border-width: 6px 0 6px 6px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+.pagination_wrp {
+    text-align:center;
+    margin:8px 0;
+}
+.pagination_wrp .page_nav_area,.goto_area {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.pagination_wrp .page_num {
+    margin:0 0 0 10px;
+}
+.goto_area input[type="text"] {
+    border: 1px solid #e7e7eb;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    margin-left: 20px;
+    margin-right:0px;
+    padding: 2px 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 35px;
+}
+
+.page_nav {
+    margin: 20px 30px;
+    font-size:14px;
+}
+.page_nav .icon_goback {
+    margin: 0 10px 0 0;
+}
+.page_nav a {
+    color: #8d8d8d;
+}
+.page_nav a:hover {
+    color: #459ae9;
+}

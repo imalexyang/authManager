@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
+	
+	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" destroy-method="destroy">
+		<property
+			name="hostName"
+			value="${redis.ip}" />
+		<property
+			name="password"
+			value="${redis.password}" />
+		<property
+			name="port"
+			value="${redis.port}" />
+		<property
+			name="poolConfig"
+			ref="jedisPoolConfig" />
+	</bean>
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connection-factory-ref="jedisConnectionFactory">
+		<property name="keySerializer">  
+	        <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>  
+	    </property>  
+	    <property name="hashKeySerializer">  
+	        <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>  
+	    </property>  
+	    <property name="valueSerializer">  
+	        <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>  
+	    </property>  
+	    <property name="hashValueSerializer">  
+	        <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>  
+	    </property>  
+	</bean>
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property
+			name="maxTotal"
+			value="${redis.pool.maxTotal}" />
+		<property
+			name="maxIdle"
+			value="${redis.pool.maxIdle}" />
+		<property
+			name="maxWaitMillis"
+			value="${redis.pool.maxWaitMillis}" />
+		<property
+			name="testOnBorrow"
+			value="${redis.pool.testOnBorrow}" /> 
+	</bean>
+</beans>

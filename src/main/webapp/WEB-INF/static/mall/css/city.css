@@ -1,0 +1,46 @@
+.city{
+	border: solid #e7e6eb 1px;
+	margin: 24px 22px;
+	}
+.city dt, .city dd{
+	display: table-cell;
+	}
+.city dt{
+	width: 255px;
+	position: relative;
+	}
+.city dd{
+	width: 690px;
+	}
+.city dt h3{
+	display: block;
+	width: 136px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.1em;
+	font-weight: lighter;
+	color: #FFF;
+	background: #77b4e3;
+	text-align: center;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+	left: 47px;
+	}
+.city dd ul{
+	margin: 3px 0;
+	}
+.city dd ul li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: dashed #dedee0 1px;
+	margin-bottom: -1px;
+	}
+.city dd ul li a{
+	color: #353535;
+	}
+.city dd ul li a:hover{
+	color: #77b4e3;
+	}
+
+

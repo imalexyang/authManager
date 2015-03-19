@@ -1,0 +1,163 @@
+.bg_white{
+	background: #FFF;
+	}
+.login_logo{
+	width: 824px;
+	height: 126px;
+	background: url(../img/login_logo.png) no-repeat top left;
+	margin: 24px auto 0;
+	}
+.login_logo h1{
+	display: none;
+	}
+.login_index{
+	width: 100%;
+	background:url(../img/bg_login.jpg) no-repeat top center;
+	}
+.login_sys_panel{
+	width: 894px;
+	margin: 0 auto;
+	}
+.login_sys_panel li{
+	display: inline-block;
+	}
+.login_sys_panel .login_sys_left{
+	width: 486px;
+	height: 248px;
+	float: left;
+	}
+.login_sys_panel .login_sys_left img{
+	margin-top: 78px;
+	}
+.login_sys_panel .login_sys_right{
+	width: 408px;
+	position: relative;
+	}
+.login_form{
+	background: url(../img/bg_alpha_grey.png);
+	border: solid #d3ccbf 1px;
+	margin: 25px 0 30px;
+	padding: 26px 0;
+	}
+.login_form dl{
+	margin-left: 38px;
+	}
+.login_form .user_info dt{
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.2em;
+	color: #222;
+	}
+.login_form dd input.input_txt{
+	width: 260px;
+	height: 38px;
+	font-size: 1em;
+	color: #9a9a9a;
+	background: #fff;
+	border: solid #e5e3df 1px;
+	padding-left: 40px;
+	margin: 5px 0;
+	border-radius: 3px;
+	}
+.login_form dd input.username{
+	background:url(../img/login_user.png) no-repeat 10px center #fff;
+	}
+.login_form dd input.password{
+	background:url(../img/login_pass.png) no-repeat 10px center #fff;
+	}
+.checking_tf{
+	color: #cd4b4b;
+	line-height: 18px;
+	display: none;
+	}
+.verity_code dt, .verity_code dd{
+	display: inline-block;*display: inline;
+	}
+.verity_code dt{
+	color: #222;
+	padding-right: 10px;
+	}
+.verity_code dd img{
+	vertical-align: middle;
+	margin: 0 4px;
+	}
+.verity_code dd a, .btn_login dd a{
+	color: #222;
+	}
+.btn_login {
+	margin-top: 10px;
+}
+.btn_login dt, .btn_login dd{
+	float: left;
+	}
+.btn_login dt input {
+	width: 108px;
+	height: 38px;
+	line-height: 33px;
+	border: 1px solid #38943c;
+	border-radius: 3px;
+	margin-left: 0;
+	font-size: 1.15em;
+}
+.btn_login dd{
+	line-height: 38px;
+	margin-left: 10px;
+	}
+.login_form dl.btn_login_01 {
+	margin-left: 39px;*margin-left: 20px;
+	}
+.login_form dd input.qr_code{
+	width: 90px;
+	padding: 0;
+	text-align: center;
+	}
+.intel_commerce{
+	width: 1000px;
+	text-align: right;
+	padding: 30px 0 38px;
+	margin:0 auto;
+	}
+.white_panel{
+	background: #eee;
+	border: solid #bebebe 1px;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+	}
+.qrcode_small{
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	}
+.verify_qrcode{
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	}
+.verify_qrcode li{
+	display: inline-block;
+	background: #FFF;
+	font-size: 1.2em;
+	border: solid #c6c6c6 1px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+	}
+.copyright_info{
+	width: 100%;
+	height: 68px;
+	line-height: 68px;
+	font-size: 0.8em;
+	color: #999;
+	background: #f8f8f8;
+	text-align: center;
+	}
+.copyright_info a {
+	color: #999;
+	}
+.copyright_info em {
+	display: inline-block;
+	margin-right: 25px;
+	}
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动的jar包地址 -->
+	<classPathEntry location="D:\Users\debug\Repositories\Maven\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar" />
+	<context id="merchantCenter" targetRuntime="MyBatis3"
+		defaultModelType="conditional">
+	<!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/shiro3" userId="root"
+			password="123456">
+		</jdbcConnection>
+	 <!--  默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer   
+	         true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal   
+	     -->   
+	  <javaTypeResolver >  
+	     <property name="forceBigDecimals" value="false" />  
+	  </javaTypeResolver>  
+	   <!-- targetProject:自动生成代码的位置 -->  
+		<javaModelGenerator targetPackage="com.saohuobang.web.platform.shiro.po"
+			targetProject="shiro-permission-server/src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->  
+			<property name="enableSubPackages" value="true" />
+			 <!-- 从数据库返回的值被清理前后的空格  -->   
+			 <property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		<sqlMapGenerator targetPackage="mybatis.mappers"
+			targetProject="shiro-permission-server/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		 <!-- 生成dao -->
+		<javaClientGenerator targetPackage="com.saohuobang.web.platform.shiro.dao" 
+			targetProject="shiro-permission-server/src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />			
+		</javaClientGenerator>  
+		
+		
+		
+		
+		
+		
+<!--		
+		<table tableName="T_CCARD_CALL_INFO" domainObjectName="CcardCallInfo"
+			enableInsert="true" enableSelectByPrimaryKey="true"
+			enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="true" >
+			<generatedKey sqlStatement="select SEQ_CCARD_CALL_INFO.nextval from dual"
+				column="id" />
+		</table>
+		
+		
+-->
+		<table tableName="sys_user" domainObjectName="user2"
+			enableInsert="true" enableSelectByPrimaryKey="true"
+			enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="true" >
+		</table>
+		
+	</context>
+</generatorConfiguration>

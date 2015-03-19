@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+  
+<!DOCTYPE configuration PUBLIC   
+	"-//mybatis.org//DTD Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+  
+<configuration>  
+	<properties>
+		<property name="dialect" value="mysql"/> 
+		<!--property name="dialect" value="oracle"/-->
+	</properties>  
+    <settings><setting name="logImpl" value="LOG4J"/></settings>
+	<typeAliases>
+		<!--别名的设置-->
+		<typeAlias alias="page" type="com.saohuobang.web.platform.utils.Page"/> 
+	</typeAliases>
+	<plugins>  
+		<plugin interceptor="com.saohuobang.web.platform.utils.PageInterceptor">
+	     	     <property name="dialect" value="mysql"/>  
+	    </plugin>
+	</plugins>   
+</configuration> 

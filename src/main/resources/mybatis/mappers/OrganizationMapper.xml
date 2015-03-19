@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.saohuobang.web.platform.shiro.dao.OrganizationMapper" >
+  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.Organization" >
+	<id column="id" property="id" jdbcType="BIGINT" />
+    <result column="org_name" property="orgName" jdbcType="VARCHAR" />
+    <result column="org_code" property="orgCode" jdbcType="VARCHAR" />
+    <result column="org_website" property="orgWebsite" jdbcType="VARCHAR" />
+    <result column="org_pic" property="orgPic" jdbcType="VARCHAR" />
+    <result column="org_address" property="orgAddress" jdbcType="VARCHAR" />
+    <result column="region_id" property="regionId" jdbcType="SMALLINT" />
+    <result column="org_lng" property="orgLng" jdbcType="DECIMAL" />
+    <result column="org_lat" property="orgLat" jdbcType="DECIMAL" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="keywords" property="keywords" jdbcType="VARCHAR" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="busline" property="busline" jdbcType="VARCHAR" />
+    <result column="org_rule" property="orgRule" jdbcType="VARCHAR" />
+    <result column="org_contact" property="orgContact" jdbcType="VARCHAR" />
+    <result column="org_tel" property="orgTel" jdbcType="VARCHAR" />
+    <result column="vip_phone" property="vipPhone" jdbcType="VARCHAR" />
+    <result column="org_email" property="orgEmail" jdbcType="VARCHAR" />
+    <result column="back_address" property="backAddress" jdbcType="VARCHAR" />
+    <result column="back_contact" property="backContact" jdbcType="VARCHAR" />
+    <result column="back_tel" property="backTel" jdbcType="VARCHAR" />
+    <result column="open_time" property="openTime" jdbcType="VARCHAR" />
+    <result column="org_grade" property="orgGrade" jdbcType="VARCHAR" />
+    <result column="org_rank" property="orgRank" jdbcType="SMALLINT" />
+    <result column="org_proinfo" property="orgProinfo" jdbcType="SMALLINT" />
+    <result column="is_mi" property="isMi" jdbcType="SMALLINT" />
+    <result column="is_delete" property="isDelete" jdbcType="SMALLINT" />
+    <result column="org_lnk" property="orgLnk" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
+    <result column="parent_ids" property="parentIds" jdbcType="VARCHAR" />
+    <result column="mall_id" property="mallId" jdbcType="VARCHAR" />
+    <result column="store_id" property="storeId" jdbcType="VARCHAR" />  
+    <result column="org_desc" property="orgDesc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+<!--   <resultMap id="ResultMapWithBLOBs" type="com.saohuobang.web.platform.shiro.entity.Organization" extends="BaseResultMap" >
+    
+  </resultMap> -->
+  <sql id="Base_Column_List" >
+     id, org_name, org_code, org_website, org_pic, org_address, region_id, org_lng, 
+    org_lat, city, province, keywords, message, busline, org_rule, org_contact, org_tel, 
+    vip_phone, org_email, back_address, back_contact, back_tel, open_time, org_grade, 
+    org_rank, org_proinfo, is_mi, is_delete, org_lnk, createtime, updatetime, parent_id, 
+    parent_ids, mall_id,store_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    org_desc
+  </sql>
+   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+     ,
+    <include refid="Blob_Column_List" />
+    from ss_organization
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+ 
+  <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ss_organization    
+  </select>
+  <select id="selectAllWithExclude" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+     ,
+    <include refid="Blob_Column_List" />
+    from ss_organization 
+    where id!=#{id,jdbcType=BIGINT} and parent_ids not like #{parentIds,jdbcType=VARCHAR}||'%' 
+  </select>    
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ss_organization
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+   <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    insert into ss_organization (id, org_name, org_code, 
+      org_website, org_pic, org_address, 
+      region_id, org_lng, org_lat, 
+      city, province, keywords, 
+      message, busline, org_rule, 
+      org_contact, org_tel, vip_phone, 
+      org_email, back_address, back_contact, 
+      back_tel, open_time, org_grade, 
+      org_rank, org_proinfo, is_mi, 
+      is_delete, org_lnk, createtime, 
+      updatetime, parent_id, parent_ids, 
+      mall_id,store_id, org_desc)
+    values (#{id,jdbcType=BIGINT}, #{orgName,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR}, 
+      #{orgWebsite,jdbcType=VARCHAR}, #{orgPic,jdbcType=VARCHAR}, #{orgAddress,jdbcType=VARCHAR}, 
+      #{regionId,jdbcType=SMALLINT}, #{orgLng,jdbcType=DECIMAL}, #{orgLat,jdbcType=DECIMAL}, 
+      #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
+      #{message,jdbcType=VARCHAR}, #{busline,jdbcType=VARCHAR}, #{orgRule,jdbcType=VARCHAR}, 
+      #{orgContact,jdbcType=VARCHAR}, #{orgTel,jdbcType=VARCHAR}, #{vipPhone,jdbcType=VARCHAR}, 
+      #{orgEmail,jdbcType=VARCHAR}, #{backAddress,jdbcType=VARCHAR}, #{backContact,jdbcType=VARCHAR}, 
+      #{backTel,jdbcType=VARCHAR}, #{openTime,jdbcType=VARCHAR}, #{orgGrade,jdbcType=VARCHAR}, 
+      #{orgRank,jdbcType=SMALLINT}, #{orgProinfo,jdbcType=SMALLINT}, #{isMi,jdbcType=SMALLINT}, 
+      #{isDelete,jdbcType=SMALLINT}, #{orgLnk,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{parentId,jdbcType=BIGINT}, #{parentIds,jdbcType=VARCHAR}, 
+      #{mallId,jdbcType=VARCHAR},#{storeId,jdbcType=VARCHAR}, #{orgDesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    insert into ss_organization
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orgName != null" >
+        org_name,
+      </if>
+      <if test="orgCode != null" >
+        org_code,
+      </if>
+      <if test="orgWebsite != null" >
+        org_website,
+      </if>
+      <if test="orgPic != null" >
+        org_pic,
+      </if>
+      <if test="orgAddress != null" >
+        org_address,
+      </if>
+      <if test="regionId != null" >
+        region_id,
+      </if>
+      <if test="orgLng != null" >
+        org_lng,
+      </if>
+      <if test="orgLat != null" >
+        org_lat,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="keywords != null" >
+        keywords,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="busline != null" >
+        busline,
+      </if>
+      <if test="orgRule != null" >
+        org_rule,
+      </if>
+      <if test="orgContact != null" >
+        org_contact,
+      </if>
+      <if test="orgTel != null" >
+        org_tel,
+      </if>
+      <if test="vipPhone != null" >
+        vip_phone,
+      </if>
+      <if test="orgEmail != null" >
+        org_email,
+      </if>
+      <if test="backAddress != null" >
+        back_address,
+      </if>
+      <if test="backContact != null" >
+        back_contact,
+      </if>
+      <if test="backTel != null" >
+        back_tel,
+      </if>
+      <if test="openTime != null" >
+        open_time,
+      </if>
+      <if test="orgGrade != null" >
+        org_grade,
+      </if>
+      <if test="orgRank != null" >
+        org_rank,
+      </if>
+      <if test="orgProinfo != null" >
+        org_proinfo,
+      </if>
+      <if test="isMi != null" >
+        is_mi,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="orgLnk != null" >
+        org_lnk,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="parentIds != null" >
+        parent_ids,
+      </if>
+      <if test="mallId != null" >
+        mall_id,
+      </if>
+      <if test="storeId != null" >
+        store_id,
+      </if>
+      <if test="orgDesc != null" >
+        org_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgWebsite != null" >
+        #{orgWebsite,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPic != null" >
+        #{orgPic,jdbcType=VARCHAR},
+      </if>
+      <if test="orgAddress != null" >
+        #{orgAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        #{regionId,jdbcType=SMALLINT},
+      </if>
+      <if test="orgLng != null" >
+        #{orgLng,jdbcType=DECIMAL},
+      </if>
+      <if test="orgLat != null" >
+        #{orgLat,jdbcType=DECIMAL},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="busline != null" >
+        #{busline,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRule != null" >
+        #{orgRule,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContact != null" >
+        #{orgContact,jdbcType=VARCHAR},
+      </if>
+      <if test="orgTel != null" >
+        #{orgTel,jdbcType=VARCHAR},
+      </if>
+      <if test="vipPhone != null" >
+        #{vipPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgEmail != null" >
+        #{orgEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="backAddress != null" >
+        #{backAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="backContact != null" >
+        #{backContact,jdbcType=VARCHAR},
+      </if>
+      <if test="backTel != null" >
+        #{backTel,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null" >
+        #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orgGrade != null" >
+        #{orgGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRank != null" >
+        #{orgRank,jdbcType=SMALLINT},
+      </if>
+      <if test="orgProinfo != null" >
+        #{orgProinfo,jdbcType=SMALLINT},
+      </if>
+      <if test="isMi != null" >
+        #{isMi,jdbcType=SMALLINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=SMALLINT},
+      </if>
+      <if test="orgLnk != null" >
+        #{orgLnk,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="parentIds != null" >
+        #{parentIds,jdbcType=VARCHAR},
+      </if>
+      <if test="mallId != null" >
+        #{mallId,jdbcType=VARCHAR},
+      </if>
+       <if test="storeId != null" >
+        #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null" >
+        #{orgDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    update ss_organization
+    <set >
+      <if test="orgName != null" >
+        org_name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        org_code = #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgWebsite != null" >
+        org_website = #{orgWebsite,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPic != null" >
+        org_pic = #{orgPic,jdbcType=VARCHAR},
+      </if>
+      <if test="orgAddress != null" >
+        org_address = #{orgAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        region_id = #{regionId,jdbcType=SMALLINT},
+      </if>
+      <if test="orgLng != null" >
+        org_lng = #{orgLng,jdbcType=DECIMAL},
+      </if>
+      <if test="orgLat != null" >
+        org_lat = #{orgLat,jdbcType=DECIMAL},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="busline != null" >
+        busline = #{busline,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRule != null" >
+        org_rule = #{orgRule,jdbcType=VARCHAR},
+      </if>
+      <if test="orgContact != null" >
+        org_contact = #{orgContact,jdbcType=VARCHAR},
+      </if>
+      <if test="orgTel != null" >
+        org_tel = #{orgTel,jdbcType=VARCHAR},
+      </if>
+      <if test="vipPhone != null" >
+        vip_phone = #{vipPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgEmail != null" >
+        org_email = #{orgEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="backAddress != null" >
+        back_address = #{backAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="backContact != null" >
+        back_contact = #{backContact,jdbcType=VARCHAR},
+      </if>
+      <if test="backTel != null" >
+        back_tel = #{backTel,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null" >
+        open_time = #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orgGrade != null" >
+        org_grade = #{orgGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRank != null" >
+        org_rank = #{orgRank,jdbcType=SMALLINT},
+      </if>
+      <if test="orgProinfo != null" >
+        org_proinfo = #{orgProinfo,jdbcType=SMALLINT},
+      </if>
+      <if test="isMi != null" >
+        is_mi = #{isMi,jdbcType=SMALLINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=SMALLINT},
+      </if>
+      <if test="orgLnk != null" >
+        org_lnk = #{orgLnk,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="parentIds != null" >
+        parent_ids = #{parentIds,jdbcType=VARCHAR},
+      </if>
+      <if test="mallId != null" >
+        mall_id = #{mallId,jdbcType=VARCHAR},
+      </if>
+      <if test="storeId != null" >
+        store_id = #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null" >
+        org_desc = #{orgDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    update ss_organization
+    set org_name = #{orgName,jdbcType=VARCHAR},
+      org_code = #{orgCode,jdbcType=VARCHAR},
+      org_website = #{orgWebsite,jdbcType=VARCHAR},
+      org_pic = #{orgPic,jdbcType=VARCHAR},
+      org_address = #{orgAddress,jdbcType=VARCHAR},
+      region_id = #{regionId,jdbcType=SMALLINT},
+      org_lng = #{orgLng,jdbcType=DECIMAL},
+      org_lat = #{orgLat,jdbcType=DECIMAL},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      busline = #{busline,jdbcType=VARCHAR},
+      org_rule = #{orgRule,jdbcType=VARCHAR},
+      org_contact = #{orgContact,jdbcType=VARCHAR},
+      org_tel = #{orgTel,jdbcType=VARCHAR},
+      vip_phone = #{vipPhone,jdbcType=VARCHAR},
+      org_email = #{orgEmail,jdbcType=VARCHAR},
+      back_address = #{backAddress,jdbcType=VARCHAR},
+      back_contact = #{backContact,jdbcType=VARCHAR},
+      back_tel = #{backTel,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      org_grade = #{orgGrade,jdbcType=VARCHAR},
+      org_rank = #{orgRank,jdbcType=SMALLINT},
+      org_proinfo = #{orgProinfo,jdbcType=SMALLINT},
+      is_mi = #{isMi,jdbcType=SMALLINT},
+      is_delete = #{isDelete,jdbcType=SMALLINT},
+      org_lnk = #{orgLnk,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      parent_ids = #{parentIds,jdbcType=VARCHAR},
+      mall_id = #{mallId,jdbcType=VARCHAR},
+      store_id = #{storeId,jdbcType=VARCHAR},
+      org_desc = #{orgDesc,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    update ss_organization
+    set org_name = #{orgName,jdbcType=VARCHAR},
+      org_code = #{orgCode,jdbcType=VARCHAR},
+      org_website = #{orgWebsite,jdbcType=VARCHAR},
+      org_pic = #{orgPic,jdbcType=VARCHAR},
+      org_address = #{orgAddress,jdbcType=VARCHAR},
+      region_id = #{regionId,jdbcType=SMALLINT},
+      org_lng = #{orgLng,jdbcType=DECIMAL},
+      org_lat = #{orgLat,jdbcType=DECIMAL},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      busline = #{busline,jdbcType=VARCHAR},
+      org_rule = #{orgRule,jdbcType=VARCHAR},
+      org_contact = #{orgContact,jdbcType=VARCHAR},
+      org_tel = #{orgTel,jdbcType=VARCHAR},
+      vip_phone = #{vipPhone,jdbcType=VARCHAR},
+      org_email = #{orgEmail,jdbcType=VARCHAR},
+      back_address = #{backAddress,jdbcType=VARCHAR},
+      back_contact = #{backContact,jdbcType=VARCHAR},
+      back_tel = #{backTel,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      org_grade = #{orgGrade,jdbcType=VARCHAR},
+      org_rank = #{orgRank,jdbcType=SMALLINT},
+      org_proinfo = #{orgProinfo,jdbcType=SMALLINT},
+      is_mi = #{isMi,jdbcType=SMALLINT},
+      is_delete = #{isDelete,jdbcType=SMALLINT},
+      org_lnk = #{orgLnk,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      parent_ids = #{parentIds,jdbcType=VARCHAR},
+      mall_id = #{mallId,jdbcType=VARCHAR},
+      store_id = #{storeId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="moveStepOne" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    update ss_organization
+    set parent_id = #{parentId,jdbcType=BIGINT},
+    parent_ids = #{parentIds,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="moveStepTwo" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+    update ss_organization
+    set parent_ids=concat(#{targetParentIds,jdbcType=VARCHAR}, substring(parent_ids, length(#{sourceParentIds,jdbcType=VARCHAR}))) 
+    where parent_ids like #{sourceParentIds,jdbcType=VARCHAR}||'%'   
+  </update>
+</mapper>
