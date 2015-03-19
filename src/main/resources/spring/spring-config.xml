@@ -13,7 +13,7 @@
     <context:property-placeholder location="classpath:props.beta/jdbc.properties,classpath:props.beta/redis.properties"/>
 
     <!-- 扫描注解Bean -->
-    <context:component-scan base-package="com.saohuobang.web.platform.**.service">
+    <context:component-scan base-package="com.platform.**.service">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -75,11 +75,11 @@
 
     <aop:config expose-proxy="true" proxy-target-class="true">
         只对业务逻辑层实施事务
-        <aop:pointcut id="txPointcut" expression="execution(* com.saohuobang.web.platform.shiro.service..*+.*(..))"/>
+        <aop:pointcut id="txPointcut" expression="execution(* com.platform.shiro.service..*+.*(..))"/>
         <aop:advisor id="txAdvisor" advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config> -->
 
-    <bean class="com.saohuobang.web.platform.shiro.spring.SpringUtils"/>
+    <bean class="com.platform.shiro.spring.SpringUtils"/>
 
     <import resource="classpath:spring/spring-config-shiro.xml"/>
     <import resource="classpath:spring/spring-redis.xml"/>

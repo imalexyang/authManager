@@ -39,7 +39,7 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.saohuobang.web.platform.shiro.dao" />
+		<property name="basePackage" value="com.platform.shiro.dao" />
 	</bean>
 
 	<bean id="transactionManager"
@@ -67,7 +67,7 @@
 
 	<aop:config>
 		<aop:pointcut id="pc"
-			expression="execution(* com.saohuobang..service..*.*(..)))" />
+			expression="execution(* com..service..*.*(..)))" />
 		<aop:advisor pointcut-ref="pc" advice-ref="userTxAdvice" />
 	</aop:config>
 

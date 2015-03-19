@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/platform/shiro/web/bind/annotation/CurrentUser.java=UTF-8
+encoding//src/main/java/com/platform/utils/ReflectUtil.java=UTF-8
 encoding//src/test/java=UTF-8

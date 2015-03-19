@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="remoteService" class="com.saohuobang.web.platform.shiro.remote.RemoteService"/>
+    <bean id="remoteService" class="com.platform.shiro.remote.RemoteService"/>
 
     <bean name="/remoteService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
         <property name="service" ref="remoteService"/>

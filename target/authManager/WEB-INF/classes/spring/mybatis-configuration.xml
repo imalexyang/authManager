@@ -12,10 +12,10 @@
     <settings><setting name="logImpl" value="LOG4J"/></settings>
 	<typeAliases>
 		<!--别名的设置-->
-		<typeAlias alias="page" type="com.saohuobang.web.platform.utils.Page"/> 
+		<typeAlias alias="page" type="com.platform.utils.Page"/> 
 	</typeAliases>
 	<plugins>  
-		<plugin interceptor="com.saohuobang.web.platform.utils.PageInterceptor">
+		<plugin interceptor="com.platform.utils.PageInterceptor">
 	     	     <property name="dialect" value="mysql"/>  
 	    </plugin>
 	</plugins>   

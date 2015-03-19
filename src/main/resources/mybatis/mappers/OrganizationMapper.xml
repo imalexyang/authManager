@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.saohuobang.web.platform.shiro.dao.OrganizationMapper" >
-  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.Organization" >
+<mapper namespace="com.platform.shiro.dao.OrganizationMapper" >
+  <resultMap id="BaseResultMap" type="com.platform.shiro.entity.Organization" >
 	<id column="id" property="id" jdbcType="BIGINT" />
     <result column="org_name" property="orgName" jdbcType="VARCHAR" />
     <result column="org_code" property="orgCode" jdbcType="VARCHAR" />
@@ -39,9 +39,6 @@
     <result column="store_id" property="storeId" jdbcType="VARCHAR" />  
     <result column="org_desc" property="orgDesc" jdbcType="LONGVARCHAR" />
   </resultMap>
-<!--   <resultMap id="ResultMapWithBLOBs" type="com.saohuobang.web.platform.shiro.entity.Organization" extends="BaseResultMap" >
-    
-  </resultMap> -->
   <sql id="Base_Column_List" >
      id, org_name, org_code, org_website, org_pic, org_address, region_id, org_lng, 
     org_lat, city, province, keywords, message, busline, org_rule, org_contact, org_tel, 
@@ -78,7 +75,7 @@
     delete from ss_organization
     where id = #{id,jdbcType=BIGINT}
   </delete>
-   <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+   <insert id="insert" parameterType="com.platform.shiro.entity.Organization" >
     insert into ss_organization (id, org_name, org_code, 
       org_website, org_pic, org_address, 
       region_id, org_lng, org_lat, 
@@ -104,7 +101,7 @@
       #{updatetime,jdbcType=TIMESTAMP}, #{parentId,jdbcType=BIGINT}, #{parentIds,jdbcType=VARCHAR}, 
       #{mallId,jdbcType=VARCHAR},#{storeId,jdbcType=VARCHAR}, #{orgDesc,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <insert id="insertSelective" parameterType="com.platform.shiro.entity.Organization" >
     insert into ss_organization
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -327,7 +324,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.platform.shiro.entity.Organization" >
     update ss_organization
     <set >
       <if test="orgName != null" >
@@ -438,7 +435,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.platform.shiro.entity.Organization" >
     update ss_organization
     set org_name = #{orgName,jdbcType=VARCHAR},
       org_code = #{orgCode,jdbcType=VARCHAR},
@@ -477,7 +474,7 @@
       org_desc = #{orgDesc,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <update id="updateByPrimaryKey" parameterType="com.platform.shiro.entity.Organization" >
     update ss_organization
     set org_name = #{orgName,jdbcType=VARCHAR},
       org_code = #{orgCode,jdbcType=VARCHAR},
@@ -515,13 +512,13 @@
       store_id = #{storeId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="moveStepOne" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <update id="moveStepOne" parameterType="com.platform.shiro.entity.Organization" >
     update ss_organization
     set parent_id = #{parentId,jdbcType=BIGINT},
     parent_ids = #{parentIds,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="moveStepTwo" parameterType="com.saohuobang.web.platform.shiro.entity.Organization" >
+  <update id="moveStepTwo" parameterType="com.platform.shiro.entity.Organization" >
     update ss_organization
     set parent_ids=concat(#{targetParentIds,jdbcType=VARCHAR}, substring(parent_ids, length(#{sourceParentIds,jdbcType=VARCHAR}))) 
     where parent_ids like #{sourceParentIds,jdbcType=VARCHAR}||'%'   

@@ -11,7 +11,7 @@
 
 	<!-- 开启AOP监听 只对当前配置文件有效 -->
 	<aop:aspectj-autoproxy expose-proxy="true" />
-	 <bean id="insertAspect" class="com.saohuobang.web.platform.shiro.aspect.InsetAspect" />
+	 <bean id="insertAspect" class="com.platform.shiro.aspect.InsetAspect" />
 	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 	   <property name="interceptors">
 	      <list>

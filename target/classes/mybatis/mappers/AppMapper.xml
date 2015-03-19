@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.saohuobang.web.platform.shiro.dao.AppMapper" >
-  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.App" >
+<mapper namespace="com.platform.shiro.dao.AppMapper" >
+  <resultMap id="BaseResultMap" type="com.platform.shiro.entity.App" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="app_key" property="appKey" jdbcType="VARCHAR" />
@@ -36,13 +36,13 @@
     delete from ss_app
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.App" >
+  <insert id="insert" parameterType="com.platform.shiro.entity.App" >
     insert into ss_app (id, name, app_key, 
       app_secret, available)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{appKey,jdbcType=VARCHAR}, 
       #{appSecret,jdbcType=VARCHAR}, #{available,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.App" >
+  <insert id="insertSelective" parameterType="com.platform.shiro.entity.App" >
     insert into ss_app
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -79,7 +79,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.App" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.platform.shiro.entity.App" >
     update ss_app
     <set >
       <if test="name != null" >
@@ -97,7 +97,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.App" >
+  <update id="updateByPrimaryKey" parameterType="com.platform.shiro.entity.App" >
     update ss_app
     set name = #{name,jdbcType=VARCHAR},
       app_key = #{appKey,jdbcType=VARCHAR},

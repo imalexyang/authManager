@@ -15,7 +15,7 @@
 
     <!-- 开启controller注解支持 -->
     <!-- 注意事项请参考：http://jinnianshilongnian.iteye.com/blog/1762632 -->
-    <context:component-scan base-package="com.saohuobang.web.platform.**.web.controller" use-default-filters="false">
+    <context:component-scan base-package="com.platform.**.web.controller" use-default-filters="false">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
         <context:include-filter type="annotation"
@@ -25,7 +25,7 @@
 
     <mvc:annotation-driven>
         <mvc:argument-resolvers>
-            <bean class="com.saohuobang.web.platform.shiro.web.bind.method.CurrentUserMethodArgumentResolver"/>
+            <bean class="com.platform.shiro.web.bind.method.CurrentUserMethodArgumentResolver"/>
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
 
@@ -49,7 +49,7 @@
     <bean id="exceptionHandlerExceptionResolver" class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver">
     </bean>
 
-    <bean class="com.saohuobang.web.platform.shiro.web.exception.DefaultExceptionHandler"/>
+    <bean class="com.platform.shiro.web.exception.DefaultExceptionHandler"/>
 
     <import resource="classpath:spring/spring-mvc-shiro.xml"/>
     <import resource="classpath:spring/spring-mvc-remote-service.xml"/>

@@ -22,7 +22,7 @@
 	     <property name="forceBigDecimals" value="false" />  
 	  </javaTypeResolver>  
 	   <!-- targetProject:自动生成代码的位置 -->  
-		<javaModelGenerator targetPackage="com.saohuobang.web.platform.shiro.po"
+		<javaModelGenerator targetPackage="com.platform.shiro.po"
 			targetProject="shiro-permission-server/src/main/java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->  
 			<property name="enableSubPackages" value="true" />
@@ -35,7 +35,7 @@
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		 <!-- 生成dao -->
-		<javaClientGenerator targetPackage="com.saohuobang.web.platform.shiro.dao" 
+		<javaClientGenerator targetPackage="com.platform.shiro.dao" 
 			targetProject="shiro-permission-server/src/main/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />			
 		</javaClientGenerator>  

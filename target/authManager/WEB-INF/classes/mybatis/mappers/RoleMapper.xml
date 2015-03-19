@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.saohuobang.web.platform.shiro.dao.RoleMapper" >
-  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.Role" >
+<mapper namespace="com.platform.shiro.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.platform.shiro.entity.Role" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="role" property="role" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
@@ -31,13 +31,13 @@
     delete from ss_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.Role" >
+  <insert id="insert" parameterType="com.platform.shiro.entity.Role" >
     insert into ss_role (id, role, description, 
       resource_ids, available)
     values (#{id,jdbcType=BIGINT}, #{role,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{resourceIds,jdbcType=VARCHAR}, #{available,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.Role" >
+  <insert id="insertSelective" parameterType="com.platform.shiro.entity.Role" >
     insert into ss_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -74,7 +74,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.Role" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.platform.shiro.entity.Role" >
     update ss_role
     <set >
       <if test="role != null" >
@@ -92,7 +92,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.Role" >
+  <update id="updateByPrimaryKey" parameterType="com.platform.shiro.entity.Role" >
     update ss_role
     set role = #{role,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},

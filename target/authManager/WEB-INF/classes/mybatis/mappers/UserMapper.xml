@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.saohuobang.web.platform.shiro.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.User" >
+<mapper namespace="com.platform.shiro.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.platform.shiro.entity.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="organization_id" property="organizationId" jdbcType="BIGINT" />
     <result column="username" property="username" jdbcType="VARCHAR" />
@@ -37,13 +37,13 @@
     delete from ss_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.User" >
+  <insert id="insert" parameterType="com.platform.shiro.entity.User" >
     insert into ss_user (id, organization_id, username, 
       password, salt, locked)
     values (#{id,jdbcType=BIGINT}, #{organizationId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{locked,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.User" >
+  <insert id="insertSelective" parameterType="com.platform.shiro.entity.User" >
     insert into ss_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -86,7 +86,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.platform.shiro.entity.User" >
     update ss_user
     <set >
       <if test="organizationId != null" >
@@ -107,7 +107,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.User" >
+  <update id="updateByPrimaryKey" parameterType="com.platform.shiro.entity.User" >
     update ss_user
     set organization_id = #{organizationId,jdbcType=BIGINT},
       username = #{username,jdbcType=VARCHAR},

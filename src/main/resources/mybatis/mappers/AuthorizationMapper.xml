@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.saohuobang.web.platform.shiro.dao.AuthorizationMapper" >
-  <resultMap id="BaseResultMap" type="com.saohuobang.web.platform.shiro.entity.Authorization" >
+<mapper namespace="com.platform.shiro.dao.AuthorizationMapper" >
+  <resultMap id="BaseResultMap" type="com.platform.shiro.entity.Authorization" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="app_id" property="appId" jdbcType="BIGINT" />
@@ -36,13 +36,13 @@
     delete from ss_user_app_roles
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.saohuobang.web.platform.shiro.entity.Authorization" >
+  <insert id="insert" parameterType="com.platform.shiro.entity.Authorization" >
     insert into ss_user_app_roles (id, user_id, app_id, 
       role_ids)
     values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{appId,jdbcType=BIGINT}, 
       #{roleIds,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.saohuobang.web.platform.shiro.entity.Authorization" >
+  <insert id="insertSelective" parameterType="com.platform.shiro.entity.Authorization" >
     insert into ss_user_app_roles
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.saohuobang.web.platform.shiro.entity.Authorization" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.platform.shiro.entity.Authorization" >
     update ss_user_app_roles
     <set >
       <if test="userId != null" >
@@ -88,7 +88,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.saohuobang.web.platform.shiro.entity.Authorization" >
+  <update id="updateByPrimaryKey" parameterType="com.platform.shiro.entity.Authorization" >
     update ss_user_app_roles
     set user_id = #{userId,jdbcType=BIGINT},
       app_id = #{appId,jdbcType=BIGINT},
