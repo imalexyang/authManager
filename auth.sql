@@ -74,7 +74,7 @@ CREATE TABLE `ss_organization` (
   `is_delete` smallint(6) DEFAULT NULL COMMENT '是否删除：0-否 1-是',
   `org_lnk` varchar(20) DEFAULT NULL COMMENT '线下CRM地址',
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '新建时间',
-  `updatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updatetime` timestamp DEFAULT NULL COMMENT '更新时间',
   `parent_id` bigint(20) DEFAULT NULL COMMENT '父ID',
   `parent_ids` varchar(100) DEFAULT NULL,
   `mall_id` varchar(32) DEFAULT NULL COMMENT '集团ID',
