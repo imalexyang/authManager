@@ -1,4 +1,4 @@
-ï»¿/*è¿™ä¸ªæ ·å¼åªç”¨äº${pagetag}ï¼Œæ²¡æœ‰åˆ«çš„ç”¨é€”*/
+/*Õâ¸öÑùÊ½Ö»ÓÃÓÚ${pagetag}£¬Ã»ÓĞ±ğµÄÓÃÍ¾*/
 .btnp {
     border-radius: 3px;
     border-style: solid;
@@ -117,4 +117,63 @@
 }
 .page_nav a:hover {
     color: #459ae9;
+}
+.page_center .btn {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    padding: 0 22px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.page_center .btn_primary {
+    background: #44b549;
+    border-color: #44b549;
+    color: #fff;
+    margin:0 0 0 10px;
+}
+.page_center .btn_primary:hover {
+    background: #2f9833;
+    border-color: #2f9833;
+    color: #fff;
+}
+.page_center .btn_default {
+    background: #fff;
+    border-color: #e6e7ec;
+    color: #222;
+    margin:0 0 0 10px;
+}
+.page_center .btn_default:hover {
+    background: #e6e7ec;
+    border-color: #dadbe0;
+    color: #222;
+}
+.page_center .btn.page_prev, .btn.page_next {
+    font-size: 0;
+    height: 25px;
+    letter-spacing: -5px;
+    line-height: 25px;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    width: auto;
+}
+.page_center .btn.page_go {
+	width:50px;
+    height:25px;
+    line-height:25px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.page_center .btn.page_prev .arrow, .btn.page_next .arrow {
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
 }

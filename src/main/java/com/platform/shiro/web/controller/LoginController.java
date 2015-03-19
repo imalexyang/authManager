@@ -48,11 +48,11 @@ public class LoginController {
         String exceptionClassName = (String)req.getAttribute("shiroLoginFailure");
         String error = null;
         if(UnknownAccountException.class.getName().equals(exceptionClassName)) {
-            error = "用户�?/密码错误";
+            error = "用户名/密码错误";
         } else if(IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
-            error = "用户�?/密码错误";
+            error = "用户名/密码错误";
         } else if(exceptionClassName != null) {
-            error = "其他错误�?" + exceptionClassName;
+            error = "其他错误：" + exceptionClassName;
         }
         model.addAttribute("error", error);
         return pageName;

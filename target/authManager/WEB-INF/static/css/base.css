@@ -28,7 +28,7 @@ em
 }
 .fr
 {
-    float: right;
+    float: right !important;
 }
 .fl
 {
@@ -133,10 +133,10 @@ em
     letter-spacing: 1px;
     background: #21a9dc;
     color: #fff;
-    -moz-box-shadow:0px 1px 1px #d5d5d5; 
+/*    -moz-box-shadow:0px 1px 1px #d5d5d5; 
     -webkit-box-shadow:0px 1px 1px #d5d5d5; 
     box-shadow:0px 1px 1px #d5d5d5;
-}
+*/}
 /*灰色按钮*/
 .btn_default
 {
@@ -144,13 +144,13 @@ em
     height: 33px;
     line-height: 33px;
     letter-spacing: 1px;
-    background: #f2f2f2;
+    background: #fff;
     color: #8d8d8d;
     border: solid #dedede 1px; 
-    -moz-box-shadow:0px 1px 1px #eee; 
+/*    -moz-box-shadow:0px 1px 1px #eee; 
     -webkit-box-shadow:0px 1px 1px #eee; 
     box-shadow:0px 1px 1px #eee;
-}
+*/}
 .icon
 {
     display: block;
@@ -167,15 +167,15 @@ em
 input
 {
     width: 114px;
-    height: 35px;
-    line-height: 35px;
-    color: black;
+    height: 31px;
+    line-height: 31px;
+    color: #555;
     margin: 0 30px 0 0;
     font-size: 14px;
     padding: 0 8px;
     outline: #BED8FF;
     border-radius: 3px;
-    border: 1px solid #E9E9E9; 
+    border: 1px solid #c2c0c0; 
 }
 textarea
 {
@@ -183,6 +183,7 @@ textarea
     padding: 8px 8px;
     border-radius: 3px;
     border: 1px solid #E9E9E9; 
+    resize: none;
 }
 input:focus, textarea:focus {
     border-color: #bed8ff;
@@ -197,14 +198,14 @@ select
 {
     width: 114px;
     height: 32px;
-    color: black;
+    color: #555;
     margin: 0 33px 0 0;
     font-size: 14px;
     line-height: 33px;
     padding: 0 8px;
     outline: #BED8FF;
     border-radius: 3px;
-    border: 1px solid #E9E9E9; 
+    border: 1px solid #c2c0c0; 
 }
 .inp_error:focus
 {
@@ -240,4 +241,8 @@ select
 .radio_label
 {
       margin:0 20px 0 0;
+}
+.t_center
+{
+    text-align: center;
 }
