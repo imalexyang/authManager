@@ -8,7 +8,14 @@ import java.io.PrintWriter;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * 
+* @ClassName: ResponseUtil 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:13:07 
+*
+ */
 public class ResponseUtil {
 	
 	

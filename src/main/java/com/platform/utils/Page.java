@@ -7,16 +7,22 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
  
 /**
- * 对分页的基本数据进行�?个简单的封装
+ * 
+* @ClassName: Page 
+* @Description: 分页 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:11:35 
+* 
+* @param <T>
  */
 public class Page<T> {
  
-    private int pageNo = 1;//页码，默认是第一�?
+    private int pageNo = 1;//页码，默认是第一�?
     private int pageSize = 10;//每页显示的记录数，默认是15
     private int totalRecord;//总记录数
-    private int totalPage;//总页�?
+    private int totalPage;//总页�?
     private List<T> results;//对应的当前页记录
-    private Map<String, Object> params = new HashMap<String, Object>();//其他的参数我们把它分装成�?个Map对象
+    private Map<String, Object> params = new HashMap<String, Object>();//其他的参数我们把它分装成�?个Map对象
     private HttpServletRequest request;//
     public int getPageNo() {
        return pageNo;
@@ -40,7 +46,7 @@ public class Page<T> {
  
     public void setTotalRecord(int totalRecord) {
        this.totalRecord = totalRecord;
-       //在设置�?�页数的时�?�计算出对应的�?�页数，在下面的三目运算中加法拥有更高的优先级，�?以最后可以不加括号�??
+       //在设置�?�页数的时�?�计算出对应的�?�页数，在下面的三目运算中加法拥有更高的优先级，�?以最后可以不加括号�??
        int totalPage = totalRecord%pageSize==0 ? totalRecord/pageSize : totalRecord/pageSize + 1;
        this.setTotalPage(totalPage);
     }

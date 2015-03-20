@@ -21,10 +21,12 @@ import com.platform.shiro.Constants;
 import java.lang.annotation.*;
 
 /**
- * <p>绑定当前登录的用户</p>
- * <p>不同于@ModelAttribute</p>
- *
- * @author yanqiang
+ * 
+* @ClassName: CurrentUser 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 上午11:37:45 
+*
  */
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)

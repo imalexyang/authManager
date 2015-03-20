@@ -19,9 +19,12 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: UserRealm 
+* @Description: 用户权限登录
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:00:32 
+*
  */
 public class UserRealm extends AuthorizingRealm {
 
@@ -49,7 +52,7 @@ public class UserRealm extends AuthorizingRealm {
 
         User user = userService.findByUsername(username);
         if(user == null) {
-            throw new UnknownAccountException();//没找到帐�?
+            throw new UnknownAccountException();//没找到帐�?
         }
 
         if(Boolean.TRUE.equals(user.getLocked())) {
@@ -58,7 +61,7 @@ public class UserRealm extends AuthorizingRealm {
 
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配
          authenticationInfo = new SimpleAuthenticationInfo(
-                user.getUsername(), //用户�?
+                user.getUsername(), //用户�?
                 user.getPassword(), //密码
                 ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt
                 getName()  //realm name

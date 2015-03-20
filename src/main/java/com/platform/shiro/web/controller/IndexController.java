@@ -20,9 +20,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: IndexController 
+* @Description: 主页
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:08:34 
+*
  */
 @Controller
 public class IndexController {
@@ -43,7 +46,7 @@ public class IndexController {
         model.addAttribute("menus", menus);        
    
         Organization org=organizationService.findOne(loginUser.getOrganizationId());
-        //判断商户号非空，直接返回主界�?        
+        //判断商户号非空，直接返回主界�?        
         while(org.getStoreId()!=null&&!org.getStoreId().equals("")){        	
         	return "index";        	
         };
@@ -52,7 +55,7 @@ public class IndexController {
         	model.addAttribute("url", "http://localhost/storeManager/store/configOne");
         	return "common/forward";  
         }     
-        //商户号为空，门店初始�?
+        //商户号为空，门店初始�?
         model.addAttribute("url", "http://localhost/storeManager/store/configStoreOne");
     	return "common/forward";
     }

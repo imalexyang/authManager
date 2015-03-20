@@ -7,9 +7,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: UserService 
+* @Description: 用户
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:06:30 
+*
  */
 public interface UserService {
 
@@ -37,7 +40,7 @@ public interface UserService {
     List<User> findPage(Page<User> p);
 
     /**
-     * 根据用户名查找用�?
+     * 根据用户名查找用�?
      * @param username
      * @return
      */

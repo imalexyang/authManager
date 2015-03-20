@@ -3,9 +3,12 @@ package com.platform.shiro.entity;
 import java.io.Serializable;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-7
- * <p>Version: 1.0
+ * 
+* @ClassName: App 
+* @Description: 应用
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:58:16 
+*
  */
 public class App implements Serializable {
     private Long id;

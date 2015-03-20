@@ -11,7 +11,12 @@ import com.platform.utils.UUID;
 import com.platform.shiro.entity.BaseEntity;
 
 /**
- * author yanqiang
+ * 
+* @ClassName: InsetAspect 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:53:41 
+*
  */
 @Aspect
 public class InsetAspect {

@@ -5,9 +5,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-28
- * <p>Version: 1.0
+ * 
+* @ClassName: Organization 
+* @Description: 组织
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:59:05 
+*
  */
 public class Organization implements Serializable {
     private Long id;
@@ -371,8 +374,8 @@ public class Organization implements Serializable {
 	
     //private Long id; //编号
     //private String name; //组织机构名称
-    //private Long parentId; //父编�?
-    //private String parentIds; //父编号列表，�?1/2/
+    //private Long parentId; //父编�?
+    //private String parentIds; //父编号列表，�?1/2/
     //private Boolean available = Boolean.FALSE;
 
 

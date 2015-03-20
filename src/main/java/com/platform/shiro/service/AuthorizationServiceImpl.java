@@ -16,12 +16,14 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: AuthorizationServiceImpl 
+* @Description: 权限
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:04:20 
+*
  */
 @Service
-
 public class AuthorizationServiceImpl implements AuthorizationService {
 
   /*  @Autowired
@@ -49,12 +51,12 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     	map.put("userId",authorization.getUserId());
     	
         Authorization dbAuthorization = authorizationMapper.selectByAppUser(map);
-        if(dbAuthorization ==  null) {//如果数据库中不存在相应记�? 直接新增
+        if(dbAuthorization ==  null) {//如果数据库中不存在相应记�? 直接新增
         	authorizationMapper.insertSelective(authorization);
             return authorization;
         }
 
-        if(dbAuthorization.equals(authorization)) {//如果是同�?条记录直接更新即�?
+        if(dbAuthorization.equals(authorization)) {//如果是同�?条记录直接更新即�?
         	authorizationMapper.updateByPrimaryKeySelective(authorization);
             return authorization;
         }

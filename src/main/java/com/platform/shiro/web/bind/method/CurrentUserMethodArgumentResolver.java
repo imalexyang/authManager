@@ -9,10 +9,12 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
- * <p>ÓÃÓÚ°ó¶¨@FormModelµÄ·½·¨²ÎÊı½âÎöÆ÷
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: CurrentUserMethodArgumentResolver 
+* @Description: TODO(è¿™é‡Œç”¨ä¸€å¥è¯æè¿°è¿™ä¸ªç±»çš„ä½œç”¨) 
+* @author yangyw(imalex@163.com)
+* @date 2015å¹´3æœˆ20æ—¥ ä¸‹åˆ2:07:55 
+*
  */
 public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentResolver {
 

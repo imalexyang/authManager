@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: UserServiceImpl 
+* @Description: 用户
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:06:47 
+*
  */
 @Service
-
 public class UserServiceImpl implements UserService {
 
    /* @Autowired
@@ -74,7 +76,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 根据用户名查找用�?
+     * 根据用户名查找用�?
      * @param username
      * @return
      */

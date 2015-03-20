@@ -6,9 +6,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 资源
+* @ClassName: ResourceService 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:05:41 
+*
  */
 public interface ResourceService {
 

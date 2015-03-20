@@ -21,9 +21,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: RoleController 
+* @Description: 角色 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:09:34 
+*
  */
 @Controller
 @RequestMapping("/role")

@@ -12,13 +12,14 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.platform.utils.Page;
 
-/** 
-* @ClassName: BaseControl 
-* @Description: TODO(Base�?) 
-* @author lis
-* @date 2014-8-29 上午11:41:31 
-*  
-*/
+/**
+ * 
+* @ClassName: PageUtil 
+* @Description: 分页
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:12:19 
+*
+ */
 public class PageUtil{
 	private static int pageSize = 10;//每页条数
 	private int pageNumber =1 ;//
@@ -101,8 +102,8 @@ public class PageUtil{
 	* @throws
 	 */
 	public static void buildGrid(Page pagebean) {
-		int pageNo=pagebean.getPageNo();//当前�?
-		int pageCount=pagebean.getTotalPage();//总页�?
+		int pageNo=pagebean.getPageNo();//当前�?
+		int pageCount=pagebean.getTotalPage();//总页�?
 		int recordCount=pagebean.getTotalRecord();//总记录数
 		HttpServletRequest request=pagebean.getRequest();
 		
@@ -115,9 +116,9 @@ public class PageUtil{
 		}
 
 		String path = request.getRequestURI();
-		String nextPage = "下一�?";
+		String nextPage = "下一�?";
 
-		String previousPage = "上一�?";
+		String previousPage = "上一�?";
 
 		StringBuffer num = new StringBuffer();
 
@@ -168,18 +169,18 @@ public class PageUtil{
 			lastPage =  path + temp + _params + "&pageNo="	+ count;
 		if (pageIndex > 1)
 //			previousPage = "<a href=\"" + path + temp + _params
-//					+ "&currentPage=" + (pageIndex - 1) + "\" >上一�?</a>";
+//					+ "&currentPage=" + (pageIndex - 1) + "\" >上一�?</a>";
 		previousPage =  path + temp + "&pageNo=" + (pageIndex - 1);
 		else
-//			previousPage = "上一�?";
+//			previousPage = "上一�?";
 			previousPage = "#";
 
 		if (pageIndex >= count)
-//			nextPage = "下一�?";
+//			nextPage = "下一�?";
 			nextPage = "#";
 		else
 //			nextPage = "<a href=\"" + path + temp + _params + "&currentPage="
-//					+ (pageIndex + 1) + "\" >下一�?</a>";
+//					+ (pageIndex + 1) + "\" >下一�?</a>";
 			nextPage = path + temp + "&pageNo="+ (pageIndex + 1) ;
 
 		int startNo = 1;
@@ -236,11 +237,11 @@ public class PageUtil{
          "     document.getElementById(\"textfield\").value='';"+
 //         "     return false;"+
         "  } else if (num <= 0 ) {"+
-         "     alert('�?要输入大�?0的数�?');"+
+         "     alert('�?要输入大�?0的数�?');"+
          "     document.getElementById(\"textfield\").value='';"+
 //         "     return false;"+
         "  }else if (num >"+pageCount +") {"+
-         "     alert('�?要输入小于�?�页的数�?');"+
+         "     alert('�?要输入小于�?�页的数�?');"+
 //         "     return false;"+
         "  }else{"+
         " var form=document.getElementById(\"hiddenForm\");"+
@@ -251,9 +252,9 @@ public class PageUtil{
           
 		"  function topage(flag){"+
 			" var form=document.getElementById(\"hiddenForm\");"+
-			"if(flag==1){" +//上一�?
+			"if(flag==1){" +//上一�?
 			"form.action='"+previousPage+"';" +
-			"}else if(flag==2){form.action='"+nextPage+"';}"+//下一�?
+			"}else if(flag==2){form.action='"+nextPage+"';}"+//下一�?
 		 	"form.submit(); "+
 		
 		   "}"+

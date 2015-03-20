@@ -3,14 +3,17 @@ package com.platform.shiro.entity;
 import java.io.Serializable;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: User 
+* @Description: 用户
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:00:05 
+*
  */
 public class User implements Serializable {
     private Long id; //编号
-    private Long organizationId; //�?属公�?
-    private String username; //用户�?
+    private Long organizationId; //�?属公�?
+    private String username; //用户�?
     private String password; //密码
     private String salt; //加密密码的盐
     private Boolean locked = Boolean.FALSE;

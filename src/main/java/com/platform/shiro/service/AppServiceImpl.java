@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: AppServiceImpl 
+* @Description: 应用
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:03:56 
+*
  */
 @Service
-
 public class AppServiceImpl implements AppService {
 
    /* @Autowired

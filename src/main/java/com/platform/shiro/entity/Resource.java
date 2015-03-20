@@ -3,18 +3,21 @@ package com.platform.shiro.entity;
 import java.io.Serializable;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: Resource 
+* @Description: 资源
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:59:17 
+*
  */
 public class Resource implements Serializable {
     private Long id; //编号
     private String name; //资源名称
     private ResourceType type = ResourceType.menu; //资源类型
     private String url; //资源路径
-    private String permission; //权限字符�?
-    private Long parentId; //父编�?
-    private String parentIds; //父编号列�?
+    private String permission; //权限字符�?
+    private Long parentId; //父编�?
+    private String parentIds; //父编号列�?
     private Boolean available = Boolean.FALSE;
 
     public static enum ResourceType {

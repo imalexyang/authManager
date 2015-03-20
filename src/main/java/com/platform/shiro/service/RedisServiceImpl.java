@@ -7,6 +7,15 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.stereotype.Service;
 
 import com.benmu.basic.redis.core.BaseJedisTemplate;
+
+/**
+ * 
+* @ClassName: RedisServiceImpl 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:05:32 
+*
+ */
 @SuppressWarnings("rawtypes")
 @Service("redisCached")
 public class RedisServiceImpl extends BaseJedisTemplate implements RedisService {

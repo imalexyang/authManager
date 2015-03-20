@@ -9,16 +9,19 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: DefaultExceptionHandler 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:10:10 
+*
  */
 @ControllerAdvice
 public class DefaultExceptionHandler {
     /**
      * 没有权限 异常
      * <p/>
-     * 后续根据不同的需求定制即�?
+     * 后续根据不同的需求定制即�?
      */
     @ExceptionHandler({UnauthorizedException.class})
     @ResponseStatus(HttpStatus.UNAUTHORIZED)

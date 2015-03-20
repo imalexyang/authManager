@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: LoginController 
+* @Description: 登录
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:08:48 
+*
  */
 @Controller
 public class LoginController {

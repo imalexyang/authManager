@@ -7,9 +7,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: AuthorizationService 
+* @Description: 权限
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:04:08 
+*
  */
 public interface AuthorizationService {
 
@@ -23,14 +26,14 @@ public interface AuthorizationService {
     public List<Authorization> findPage(Page<Authorization> p);
 
     /**
-     * 根据AppKey和用户名查找其角�?
+     * 根据AppKey和用户名查找其角�?
      * @param username
      * @return
      */
     public Set<String> findRoles(String appKey, String username);
 
     /**
-     * 根据AppKey和用户名查找权限字符�?
+     * 根据AppKey和用户名查找权限字符�?
      * @param username
      * @return
      */

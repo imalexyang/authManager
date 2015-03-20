@@ -2,12 +2,13 @@ package com.platform.utils;
 
 import java.lang.reflect.Field;
 
-/** 
- * @ClassName: ReflectUtil 
- * @Description: TODO(利用反射进行操作的一个工具类) 
- * @author lis
- * @date 2014-8-25 下午6:55:24 
- *  
+/**
+ * 
+* @ClassName: ReflectUtil 
+* @Description: 反射操作的工具类
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:12:49 
+*
  */
 public  class ReflectUtil
 {

@@ -5,6 +5,14 @@ import java.util.List;
 import com.platform.shiro.entity.App;
 import com.platform.utils.Page;
 
+/**
+ * 
+* @ClassName: AppMapper 
+* @Description: 应用
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:56:00 
+*
+ */
 public interface AppMapper {
     int deleteByPrimaryKey(Long id);
 

@@ -1,9 +1,12 @@
 package com.platform.shiro;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: Constants 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:10:52 
+*
  */
 public class Constants {
     public static final String CURRENT_USER = "user";

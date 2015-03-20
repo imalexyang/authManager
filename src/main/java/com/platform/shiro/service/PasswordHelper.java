@@ -10,9 +10,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: PasswordHelper 
+* @Description: 密码助手
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:04:55 
+*
  */
 @Service
 public class PasswordHelper {

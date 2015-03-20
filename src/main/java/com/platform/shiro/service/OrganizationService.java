@@ -5,9 +5,12 @@ import com.platform.shiro.entity.Organization;
 import java.util.List;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: OrganizationService 
+* @Description: 组织
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:04:31 
+*
  */
 public interface OrganizationService {
 

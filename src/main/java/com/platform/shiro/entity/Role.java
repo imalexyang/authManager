@@ -8,18 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: Role 
+* @Description: 角色
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:59:30 
+*
  */
 public class Role implements Serializable {
     private Long id; //编号
-    private String role; //角色标识 程序中判断使�?,�?"admin"
+    private String role; //角色标识 程序中判断使�?,�?"admin"
     private String description; //角色描述,UI界面显示使用
-//    private List<Long> resourceIds; //拥有的资�?
+//    private List<Long> resourceIds; //拥有的资�?
     private List<Long> resourceIdsList;
-    private String resourceIds; //拥有的资�?
-    private Boolean available = Boolean.FALSE; //是否可用,如果不可用将不会添加给用�?
+    private String resourceIds; //拥有的资�?
+    private Boolean available = Boolean.FALSE; //是否可用,如果不可用将不会添加给用�?
 
     public Role() {
     }

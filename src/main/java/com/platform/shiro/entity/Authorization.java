@@ -8,9 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: Authorization 
+* @Description: 权限
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:58:30 
+*
  */
 public class  Authorization implements Serializable {
     private Long id;

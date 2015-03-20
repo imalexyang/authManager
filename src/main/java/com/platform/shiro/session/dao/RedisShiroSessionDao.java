@@ -11,7 +11,14 @@ import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 
 import com.platform.shiro.service.RedisService;
 
-
+/**
+ * 
+* @ClassName: RedisShiroSessionDao 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:07:14 
+*
+ */
 public class RedisShiroSessionDao extends CachingSessionDAO {
 	
 	private String sessionprefix="ss-";
@@ -21,7 +28,7 @@ public class RedisShiroSessionDao extends CachingSessionDAO {
 	@Override
 	public void update(Session session) throws UnknownSessionException {
 	   if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {
-           return; //如果会话过期/停止 没必要再更新�?
+           return; //如果会话过期/停止 没必要再更新�?
        }
 		try {
 			cached.updateCached(session.getId().toString(),session);
@@ -87,7 +94,7 @@ public class RedisShiroSessionDao extends CachingSessionDAO {
 	@Override
 	protected void doUpdate(Session session) {
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {
-	           return; //如果会话过期/停止 没必要再更新�?
+	           return; //如果会话过期/停止 没必要再更新�?
 	       }
 		update(session);
 	}

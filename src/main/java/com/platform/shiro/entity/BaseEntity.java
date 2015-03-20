@@ -5,7 +5,12 @@ import java.util.Date;
 import java.util.Observable;
 
 /**
- * author yanqiang
+ * 
+* @ClassName: BaseEntity 
+* @Description: 基类
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:58:51 
+*
  */
 @SuppressWarnings("serial")
 public class BaseEntity extends Observable implements Serializable {
@@ -18,7 +23,7 @@ public class BaseEntity extends Observable implements Serializable {
 	 */
 	private Date createtime;
 	/**
-	 * 创建�?
+	 * 创建�?
 	 */
 	private String creator;
 	private String creatorid;

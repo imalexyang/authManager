@@ -5,9 +5,17 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
+/**
+ * 
+* @ClassName: SpringUtils 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:07:22 
+*
+ */
 public final class SpringUtils implements BeanFactoryPostProcessor {
 
-    private static ConfigurableListableBeanFactory beanFactory; // Spring应用上下文环�?
+    private static ConfigurableListableBeanFactory beanFactory; // Spring应用上下文环�?
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
@@ -18,7 +26,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
      * 获取对象
      *
      * @param name
-     * @return Object �?个以�?给名字注册的bean的实�?
+     * @return Object �?个以�?给名字注册的bean的实�?
      * @throws org.springframework.beans.BeansException
      *
      */
@@ -28,7 +36,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
     }
 
     /**
-     * 获取类型为requiredType的对�?
+     * 获取类型为requiredType的对�?
      *
      * @param clz
      * @return
@@ -42,7 +50,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
     }
 
     /**
-     * 如果BeanFactory包含�?个与�?给名称匹配的bean定义，则返回true
+     * 如果BeanFactory包含�?个与�?给名称匹配的bean定义，则返回true
      *
      * @param name
      * @return boolean
@@ -52,7 +60,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
     }
 
     /**
-     * 判断以给定名字注册的bean定义是一个singleton还是�?个prototype�? 如果与给定名字相应的bean定义没有被找到，将会抛出�?个异常（NoSuchBeanDefinitionException�?
+     * 判断以给定名字注册的bean定义是一个singleton还是�?个prototype�? 如果与给定名字相应的bean定义没有被找到，将会抛出�?个异常（NoSuchBeanDefinitionException�?
      *
      * @param name
      * @return boolean
@@ -65,7 +73,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
 
     /**
      * @param name
-     * @return Class 注册对象的类�?
+     * @return Class 注册对象的类�?
      * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
      *
      */

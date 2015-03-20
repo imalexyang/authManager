@@ -10,6 +10,14 @@ import org.codehaus.jackson.map.JsonSerializer;
 import org.codehaus.jackson.map.SerializerProvider;
 import org.codehaus.jackson.util.CharTypes;
 
+/**
+ * 
+* @ClassName: StringUnicodeSerializer 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:13:35 
+*
+ */
 public class StringUnicodeSerializer extends JsonSerializer<String> {
 
 	private final char[] HEX_CHARS = "0123456789ABCDEF".toCharArray();
@@ -44,7 +52,7 @@ public class StringUnicodeSerializer extends JsonSerializer<String> {
 	      case JsonWriteContext.STATUS_EXPECT_NAME:
 	        throw new JsonGenerationException("Can not write string value here");
 	    }
-	    gen.writeRaw('"');//写入JSON中字符串的开头引�?
+	    gen.writeRaw('"');//写入JSON中字符串的开头引�?
 	    for (char c : str.toCharArray()) {
 	      if (c >= 0x80){
 	    	  writeUnicodeEscape(gen, c); // 为所有非ASCII字符生成转义的unicode字符
@@ -56,11 +64,11 @@ public class StringUnicodeSerializer extends JsonSerializer<String> {
 	        }else if (code < 0){
 	        	writeUnicodeEscape(gen, (char) (-code - 1)); // 通用转义字符
 	        }else {
-	        	writeShortEscape(gen, (char) code); // 短转义字�? (\n \t ...)
+	        	writeShortEscape(gen, (char) code); // 短转义字�? (\n \t ...)
 	        }
 	      }
 	    }
-	    gen.writeRaw('"');//写入JSON中字符串的结束引�?
+	    gen.writeRaw('"');//写入JSON中字符串的结束引�?
 	}
 
 }

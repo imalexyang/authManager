@@ -8,9 +8,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: ServerFormAuthenticationFilter 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:10:18 
+*
  */
 public class ServerFormAuthenticationFilter extends FormAuthenticationFilter {
 

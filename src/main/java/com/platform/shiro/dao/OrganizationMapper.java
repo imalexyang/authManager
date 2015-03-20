@@ -5,6 +5,14 @@ import java.util.Map;
 
 import com.platform.shiro.entity.Organization;
 
+/**
+ * 
+* @ClassName: OrganizationMapper 
+* @Description: 组织
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午1:57:16 
+*
+ */
 public interface OrganizationMapper {
     int deleteByPrimaryKey(Long id);
 

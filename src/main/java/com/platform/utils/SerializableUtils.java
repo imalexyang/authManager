@@ -6,9 +6,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: SerializableUtils 
+* @Description: 序列化
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:13:15 
+*
  */
 public class SerializableUtils {
 
@@ -35,7 +38,7 @@ public class SerializableUtils {
 		ObjectOutputStream oos = null;
 		ByteArrayOutputStream baos = null;
 		try {
-			// 序列�?
+			// 序列�?
 			baos = new ByteArrayOutputStream();
 			oos = new ObjectOutputStream(baos);
 			oos.writeObject(object);

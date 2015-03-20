@@ -7,9 +7,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: RoleService 
+* @Description: 角色
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:06:05 
+*
  */
 public interface RoleService {
 
@@ -23,14 +26,14 @@ public interface RoleService {
     public List<Role> findPage(Page<Role> p);
 
     /**
-     * 根据角色编号得到角色标识符列�?
+     * 根据角色编号得到角色标识符列�?
      * @param roleIds
      * @return
      */
     Set<String> findRoles(Long... roleIds);
 
     /**
-     * 根据角色编号得到权限字符串列�?
+     * 根据角色编号得到权限字符串列�?
      * @param roleIds
      * @return
      */

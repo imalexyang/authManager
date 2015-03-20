@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * <p>User: yanqiang
- * <p>Date: 15-1-8
- * <p>Version: 1.0
+ * 
+* @ClassName: ResourceController 
+* @Description: 资源
+* @author yangyw(imalex@163.com)
+* @date 2015年3月20日 下午2:09:17 
+*
  */
 @Controller
 @RequestMapping("/resource")
@@ -46,7 +49,7 @@ public class ResourceController {
         child.setParentId(parentId);
         child.setParentIds(parent.makeSelfAsParentIds());
         model.addAttribute("resource", child);
-        model.addAttribute("op", "新增子节�?");
+        model.addAttribute("op", "新增子节�?");
         return "resource/edit";
     }
 
@@ -54,7 +57,7 @@ public class ResourceController {
     @RequestMapping(value = "/{parentId}/appendChild", method = RequestMethod.POST)
     public String create(Resource resource, RedirectAttributes redirectAttributes) {
         resourceService.createResource(resource);
-        redirectAttributes.addFlashAttribute("msg", "新增子节点成�?");
+        redirectAttributes.addFlashAttribute("msg", "新增子节点成�?");
         return "redirect:/resource";
     }
 
