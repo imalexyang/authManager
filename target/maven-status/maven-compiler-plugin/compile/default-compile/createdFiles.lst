@@ -17,11 +17,15 @@ com\platform\shiro\dao\AppMapper.class
 com\platform\shiro\web\controller\OrganizationController.class
 com\platform\shiro\web\shiro\filter\ServerFormAuthenticationFilter.class
 com\platform\utils\PageUtil.class
+com\platform\utils\BaseJedisTemplate$1.class
 com\platform\shiro\aspect\InsetAspect.class
 com\platform\utils\SerializableUtils.class
+com\platform\utils\BaseJedisTemplate.class
+com\platform\utils\BaseJedisTemplate$4.class
 com\platform\utils\StringUnicodeSerializer.class
 com\platform\shiro\session\dao\RedisShiroSessionDao.class
 com\platform\shiro\web\bind\annotation\CurrentUser.class
+com\platform\utils\BaseJedisTemplate$2.class
 com\platform\utils\PageInterceptor.class
 com\platform\shiro\service\RoleService.class
 com\platform\shiro\entity\BaseEntity.class
@@ -45,6 +49,7 @@ com\platform\shiro\spring\SpringUtils.class
 com\platform\shiro\service\RedisService.class
 com\platform\shiro\entity\Role.class
 com\platform\shiro\service\ResourceServiceImpl.class
+com\platform\utils\BaseJedisTemplate$3.class
 com\platform\shiro\service\UserServiceImpl.class
 com\platform\shiro\web\exception\DefaultExceptionHandler.class
 com\platform\shiro\service\AuthorizationServiceImpl.class

@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.springframework.stereotype.Service;
 
-import com.benmu.basic.redis.core.BaseJedisTemplate;
+import com.platform.commons.redis.core.BaseJedisTemplate;
 
 /**
  * 
@@ -22,7 +22,8 @@ public class RedisServiceImpl extends BaseJedisTemplate implements RedisService 
 
 	@Override
 	public String deleteCached(final String sessionId) throws Exception {
-		super.delByKeys(sessionId);
+		String[] sessionIds = new String[]{sessionId};
+		super.delByKeys(sessionIds);
 		return sessionId;
 	}
 

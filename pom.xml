@@ -2,21 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>shiro-permission</artifactId>
-        <groupId>com.saohuobang.web.platform</groupId>
-        <version>1.0</version>
-        <relativePath>../shiro-permission-parent/pom.xml</relativePath>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.platform</groupId>
     <artifactId>authManager</artifactId>
 	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	
     <dependencies>
-    	<dependency>
-			<groupId>com.saohuobang.web.base</groupId>
-			<artifactId>common-rpc</artifactId>
-			<version>1.0.5-snapshot</version>
-		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -26,12 +19,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.25</version>
-        </dependency>
-        <dependency>
-            <groupId>com.saohuobang.web.platform</groupId>
-            <artifactId>shiro-permission-core</artifactId>
-            <version>1.0</version>
-        </dependency>        
+        </dependency>       
 		 <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -72,44 +60,65 @@
         	<version>0.1</version>
         </dependency>
         <dependency>
-			<groupId>com.saohuobang.web.base</groupId>
-			<artifactId>commons</artifactId>
-			<version>1.0.8</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-context</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-test</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-beans</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-aop</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-context-support</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-tx</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.15.RELEASE</version>			
 		</dependency>
-		 <dependency>
-				<groupId>com.benmu.medical.basic</groupId>
-  				<artifactId>basic-redis</artifactId>
-				<version>1.0.2</version>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.15.RELEASE</version>
+		</dependency>
+		<!-- <dependency>
+	    	<groupId>org.springframework.data</groupId>
+	    	<artifactId>spring-data-redis</artifactId>
+	    	<scope>compile</scope>
+	    	<version>1.4.0.RELEASE</version>
+	    </dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.7.0</version>
+		</dependency> -->
+		<dependency>
+				<groupId>com.platform.commons</groupId>
+  				<artifactId>com.platform.commons.redis</artifactId>
+				<version>1.0.0</version>
 				<exclusions>
 			        <exclusion>
 						<groupId>org.springframework</groupId>
@@ -148,28 +157,85 @@
   		</dependency>
   		<dependency>
   			<groupId>org.mybatis</groupId>
-  			<artifactId>mybatis</artifactId>
-  			<version>3.2.3</version>
-  		</dependency>
-  		<dependency>
-  			<groupId>org.mybatis</groupId>
   			<artifactId>mybatis-spring</artifactId>
   			<version>1.2.2</version>
   		</dependency>
   		<dependency>
-			<groupId>com.benmu.medical.basic</groupId>
-			<artifactId>basic-mybatis</artifactId>
-			<version>1.0.1</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.3</version>
 		</dependency>
   		<dependency>
 				<groupId>org.lazyluke</groupId>
 				<artifactId>log4jdbc-remix</artifactId>
 				<version>0.2.7</version>
-			</dependency>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+	     <groupId>org.mortbay.jetty</groupId>
+	     <artifactId>servlet-api-2.5</artifactId>
+	     <version>6.1.9</version>
+	     <scope>provided</scope>
+	   </dependency> 
+		<dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>jstl</artifactId>  
+            <version>1.2</version>  
+        </dependency>
+        <dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		 <dependency>
+            <groupId>com.platform.security</groupId>
+            <artifactId>com.platform.security.core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
-<properties>
+    
+     <profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env.profile>dev</env.profile>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>beta</id>
+			<properties>
+				<env.profile>beta</env.profile>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env.profile>prod</env.profile>
+			</properties>
+		</profile>
+	</profiles>
+    
+  <properties>
 	<java.home>/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home</java.home>
   </properties>
+  
     <build>
     <resources>
     	<resource>
@@ -200,10 +266,6 @@
 			      <uriEncoding>UTF-8</uriEncoding>
 			      <useBodyEncodingForURI>true</useBodyEncodingForURI>
 			      <systemProperties>
-			        <appserver.base>${project.build.directory}/appserver-base</appserver.base>
-			        <appserver.home>${project.build.directory}/appserver-home</appserver.home>
-			        <derby.system.home>${project.build.directory}/appserver-base/logs</derby.system.home>
-			        <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
 			        <systemProperty>
 			             <name>org.apache.commons.logging.Log</name>
 			             <value>org.apache.commons.logging.impl.SimpleLog</value>
@@ -240,5 +302,6 @@
 			</configuration>
 		</plugin>
     </plugins>
-    </build>
+    <defaultGoal>compile</defaultGoal>
+    </build>    
 </project>

@@ -1,7 +1,7 @@
 package com.platform.shiro.remote;
 
-import com.saohuobang.web.platform.shiro.remote.PermissionContext;
-import com.saohuobang.web.platform.shiro.remote.RemoteServiceInterface;
+import com.platform.security.remote.PermissionContext;
+import com.platform.security.remote.RemoteServiceInterface;
 import com.platform.shiro.service.AuthorizationService;
 
 import org.apache.shiro.session.Session;
@@ -13,9 +13,9 @@ import java.io.Serializable;
 /**
  * 
 * @ClassName: RemoteService 
-* @Description: TODO(这里用一句话描述这个类的作用) 
+* @Description: TODO(杩欓噷鐢ㄤ竴鍙ヨ瘽鎻忚堪杩欎釜绫荤殑浣滅敤) 
 * @author yangyw(imalex@163.com)
-* @date 2015年3月20日 下午2:02:05 
+* @date 2015骞�鏈�0鏃�涓嬪崍2:02:05 
 *
  */
 public class RemoteService implements RemoteServiceInterface {
