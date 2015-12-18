@@ -1,7 +1,7 @@
 package com.platform.shiro.remote;
 
-import com.platform.security.remote.PermissionContext;
-import com.platform.security.remote.RemoteServiceInterface;
+import com.platform.shiro.security.remote.PermissionContext;
+import com.platform.shiro.security.remote.RemoteServiceInterface;
 import com.platform.shiro.service.AuthorizationService;
 
 import org.apache.shiro.session.Session;
