@@ -1,4 +1,4 @@
-package com.platform.shiro.web.controller;
+//package com.platform.shiro.web.controller;
 //package com.platform.shiro.web.controller;
 //
 //import java.awt.image.BufferedImage;
@@ -28,7 +28,7 @@ package com.platform.shiro.web.controller;
 //	private CaptchaInf captchaInf;
 //
 ////	public CaptchaController(){
-////		logger.info("正在构�?�验证码控制�?...");
+////		logger.info("正在构�?�验证码控制�?...");
 ////	}
 //
 //	@RequestMapping(value="verify.do")
@@ -51,7 +51,7 @@ package com.platform.shiro.web.controller;
 //				msg= "token缺失";
 //				break;
 //			}
-//			//验证码验�?
+//			//验证码验�?
 //			boolean captchaPass= false;
 //			try {
 //				captchaPass = captchaInf.doVerify(captcha, token);
@@ -62,12 +62,12 @@ package com.platform.shiro.web.controller;
 //			}
 //			if (!captchaPass){
 //				hasError= true;
-//				msg= "验证码错�?";
+//				msg= "验证码错�?";
 //				break;
 //			}
 //		}while(false);
 //		if (hasError){
-//			model.put("msg", String.format("出错�?:%s", msg));
+//			model.put("msg", String.format("出错�?:%s", msg));
 //		}else{
 //			model.put("msg", "验证成功");
 //		}
@@ -76,7 +76,7 @@ package com.platform.shiro.web.controller;
 //
 //
 //	/**
-//	 * 验证码请求接�?
+//	 * 验证码请求接�?
 //	 * @param request
 //	 * @param response
 //	 * @param token
@@ -94,11 +94,11 @@ package com.platform.shiro.web.controller;
 //				String captcha= captchaInf.getCaptcha(token);
 //				//根据明文captcha生成图片
 //				BufferedImage img= captchaInf.getCaptchaImg(captcha);
-//				//发�?�图�?
+//				//发�?�图�?
 //				ResponseUtil.sendImg(response, img, "image/jpeg", "code", "jpg");
 //			}catch(Exception e){
 //				e.printStackTrace();
-//				logger.error(String.format("生成验证码图片出�?:%s", e.getMessage()));
+//				logger.error(String.format("生成验证码图片出�?:%s", e.getMessage()));
 //			}
 //		}
 //		return null;

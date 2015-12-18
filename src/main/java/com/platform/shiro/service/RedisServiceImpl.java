@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.springframework.stereotype.Service;
 
-import com.platform.commons.redis.core.BaseJedisTemplate;
+import com.platform.utils.BaseJedisTemplate;
 
 /**
  * 
