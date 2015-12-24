@@ -19,3 +19,4 @@
 *.js linguist-language=Java
 *.css linguist-language=Java
 *.jsp linguist-language=Java
+*.html linguist-language=Java
