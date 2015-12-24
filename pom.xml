@@ -110,6 +110,11 @@
 	    	<scope>compile</scope>
 	    	<version>1.4.0.RELEASE</version>
 	    </dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.15.RELEASE</version>
+  		</dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
@@ -152,6 +157,11 @@
 			<version>1.8.7</version>
 		</dependency>
 		<dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.4</version>
@@ -161,6 +171,21 @@
 			<artifactId>shiro-web</artifactId>
 			<version>1.2.4</version>
 		</dependency>
+		<dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-quartz</artifactId>
+            <version>1.2.3</version>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.shiro</groupId>
+             <artifactId>shiro-spring</artifactId>
+             <version>1.2.3</version>
+         </dependency>
 		<dependency>
 	     <groupId>org.mortbay.jetty</groupId>
 	     <artifactId>servlet-api-2.5</artifactId>
@@ -177,11 +202,6 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-		 <dependency>
-            <groupId>com.platform.security</groupId>
-            <artifactId>com.platform.security.core</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
     <repositories>
 		<repository>
