@@ -14,5 +14,8 @@ http://blog.csdn.net/imalex163/article/details/50339547
 请参考https://github.com/imalexyang/authManager/issues/1 这里的两位网友的解决办法，
 另外你也可以改成datetime格式，每次新建或者修改的时候写入now()也是可以的。
 
+Elasticsearch 参考书(Reference)简体中文版 [2.3] 
+https://www.gitbook.com/book/imalexyang/elasticsearch-reference-2-3
+
 beijing
-20160609
+20160619
