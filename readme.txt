@@ -8,7 +8,7 @@ http://blog.csdn.net/imalex163/article/details/50339547
 用户名：admin
 密码：admin
 
-项目功能基本可用，待完善-2015121
+项目功能基本可用，待完善-20161101
 
 有几个网友提出建表语句有问题这个事情，
 请参考https://github.com/imalexyang/authManager/issues/1 这里的两位网友的解决办法，
@@ -18,4 +18,4 @@ Elasticsearch 参考书(Reference)简体中文版 [2.3] 
 https://www.gitbook.com/book/imalexyang/elasticsearch-reference-2-3
 
 beijing
-20160619
+20161101
